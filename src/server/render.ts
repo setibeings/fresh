@@ -199,10 +199,8 @@ export async function render<Data>(
   function renderInner(): string {
     bodyHtml = renderToString(vnode);
 
-    console.log("DONE", unusedSlots.length);
     for (const slot of unusedSlots) {
       const slotHtml = renderToString(slot.children as any);
-      console.log("SLOT", slotHtml);
       bodyHtml += `<template id="${slot.id}">${slotHtml}</template>`;
     }
     unusedSlots = [];
@@ -641,8 +639,6 @@ options.diffed = (vnode) => {
             // FIXME
             unusedSlots.push({ id: "TODO", children });
           }
-
-          // console.log(children);
         }
       }
     }
