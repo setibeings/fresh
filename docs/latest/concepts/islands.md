@@ -55,7 +55,7 @@ you to pass static content rendered by the server to an island in the browser.
 
 ```jsx
 // route/index.tsx
-import MyIsland from "../islands/my-island.tsx";
+import MyIsland from "../islands/MyIsland.tsx";
 
 export default function Home() {
   return (
